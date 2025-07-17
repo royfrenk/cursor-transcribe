@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["src/tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+markers = [
+    "unit: marks tests as unit tests",
+    "integration: marks tests as integration tests",
+    "e2e: marks tests as end-to-end tests",
+    "accessibility: marks tests as accessibility tests",
+    "cross_browser: marks tests as cross-browser tests",
+    "performance: marks tests as performance tests",
+    "nondestructive: marks tests as safe to run against sensitive environments"
+]
+asyncio_mode = "auto" 
